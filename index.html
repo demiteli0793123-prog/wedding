@@ -155,6 +155,22 @@
             color: #b59d7b;
             font-style: italic;
         }
+        /* Стиль для взрослого фото */
+        .couple-photo {
+            margin: 40px 0;
+            text-align: center;
+        }
+        .couple-photo img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border: 3px solid rgba(181,157,123,0.3);
+            transition: transform 0.3s;
+        }
+        .couple-photo img:hover {
+            transform: scale(1.01);
+        }
         .two-columns {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -330,6 +346,11 @@
                 </div>
             </div>
 
+            <!-- Наше фото (без подписи) -->
+            <div class="card couple-photo" style="padding: 30px;">
+                <img src="https://raw.githubusercontent.com/DmitryAlexandra/wedding/main/images/sochi.jpg" alt="Дмитрий и Александра">
+            </div>
+
             <!-- Telegram с QR-кодом -->
             <div class="card qr-section">
                 <h2 class="section-title">Делитесь фото и видео</h2>
@@ -373,6 +394,7 @@
                             <strong>Церемония:</strong>
                             <p>Екатерининский зал</p>
                             <p>улица Офицерская, 47</p>
+                            <p><a href="https://yandex.ru/maps/org/dvorets_brakosochetaniya_yekaterininskiy_zal/128066017990/?ll=38.987486%2C45.060001&utm_source=share&z=16.15" target="_blank">Открыть карту</a></p>
                         </div>
                         <div class="address">
                             <strong>Банкет:</strong>
