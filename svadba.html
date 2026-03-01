@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дмитрий & Александра | Свадьба 22.08.26</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: #f9f7f4;
+            color: #2c2c2c;
+            line-height: 1.5;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        .hero { text-align: center; padding: 40px 0 20px; }
+        .hero h1 { font-size: 42px; letter-spacing: 4px; font-weight: 400; color: #1a1a1a; }
+        .hero-date { font-size: 20px; color: #b59d7b; margin: 20px 0; text-transform: uppercase; }
+        .names { font-size: 56px; font-weight: 350; margin: 30px 0; }
+        .names span { display: block; font-size: 24px; color: #b59d7b; margin-top: 10px; }
+        .timer {
+            display: flex; justify-content: center; gap: 30px; margin: 40px 0 60px; flex-wrap: wrap;
+        }
+        .timer-item { text-align: center; min-width: 100px; }
+        .timer-item .number { font-size: 48px; font-weight: 300; color: #1a1a1a; }
+        .timer-item .label { font-size: 14px; text-transform: uppercase; color: #888; }
+        .section { margin: 60px 0; text-align: center; }
+        .section-title {
+            font-size: 28px; font-weight: 350; margin-bottom: 30px; color: #1a1a1a;
+            padding-bottom: 15px; position: relative;
+        }
+        .section-title:after {
+            content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 1px; background: #b59d7b;
+        }
+        .greeting { font-size: 18px; max-width: 600px; margin: 0 auto; color: #4a4a4a; }
+        .quote {
+            font-style: italic; font-size: 20px; color: #b59d7b; margin: 40px 0;
+            padding: 20px; border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+        }
+        .two-columns {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 40px 0; text-align: left;
+        }
+        .column h3 { font-size: 22px; font-weight: 400; margin-bottom: 20px; color: #1a1a1a; }
+        .program-item { margin-bottom: 15px; display: flex; gap: 15px; }
+        .program-time { min-width: 100px; font-weight: 500; color: #b59d7b; }
+        .program-desc { color: #4a4a4a; }
+        .address { margin-bottom: 15px; line-height: 1.6; }
+        .address strong { display: block; color: #1a1a1a; margin-bottom: 5px; }
+        .address p { color: #666; margin-bottom: 5px; }
+        .address a { color: #b59d7b; text-decoration: none; border-bottom: 1px dashed #b59d7b; }
+        .reminder-list { list-style: none; margin: 30px 0; }
+        .reminder-list li {
+            margin-bottom: 20px; padding-left: 20px; border-left: 2px solid #b59d7b; text-align: left;
+        }
+        .reminder-list li strong { display: block; color: #1a1a1a; margin-bottom: 5px; }
+        .btn {
+            display: inline-block; padding: 15px 50px; background: #b59d7b; color: white;
+            text-decoration: none; letter-spacing: 1px; font-size: 16px; border: none;
+            cursor: pointer; transition: background 0.3s; margin: 20px 0;
+        }
+        .btn:hover { background: #9e8a6b; }
+        footer { text-align: center; margin-top: 60px; padding: 40px 0; border-top: 1px solid #eee; color: #888; }
+        .deadline { font-size: 20px; color: #b59d7b; margin: 30px 0; }
+        .signature { font-size: 32px; font-weight: 300; margin: 20px 0; }
+        @media (max-width: 700px) {
+            .two-columns { grid-template-columns: 1fr; }
+            .names { font-size: 40px; }
+            .timer-item .number { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>ПРИГЛАШЕНИЕ НА СВАДЬБУ</h1>
+        <div class="hero-date">22.08.26 | суббота</div>
+        <div class="names">Дмитрий & Александра <span>Дорогие родные и близкие!</span></div>
+    </div>
+
+    <div class="timer" id="countdown">
+        <div class="timer-item"><div class="number" id="days">00</div><div class="label">дней</div></div>
+        <div class="timer-item"><div class="number" id="hours">00</div><div class="label">часов</div></div>
+        <div class="timer-item"><div class="number" id="minutes">00</div><div class="label">минут</div></div>
+        <div class="timer-item"><div class="number" id="seconds">00</div><div class="label">секунд</div></div>
+    </div>
+
+    <div class="section">
+        <div class="greeting">В нашей жизни предстоят счастливые перемены! Мы хотим, чтобы в этот день рядом с нами были самые близкие и дорогие для нас люди. Будем рады разделить с вами чудесный праздник в день нашей свадьбы.</div>
+    </div>
+
+    <div class="section">
+        <p style="color: #666; margin-bottom: 20px;">На свадьбе будет фотограф, который запечатлеет в кадрах все эмоции торжества. Поэтому не забудьте вернуться на этот сайт, чтобы по активной кнопке "СКАЧАТЬ" перейти на диск, и выбрать понравившиеся кадры :)</p>
+        <a href="#" class="btn">СКАЧАТЬ</a>
+        <p style="font-size: 14px; color: #999; margin-top: 10px;">(ссылка появится после свадьбы)</p>
+    </div>
+
+    <div class="quote">“Двоим лучше, нежели одному; потому что у них есть доброе вознаграждение в труде их”</div>
+
+    <div class="section">
+        <div class="section-title">Памятка для гостей</div>
+        <ul class="reminder-list">
+            <li><strong>Цветы и подарки</strong> Будем рады цветам и признательны за подарки в конвертах (вклад в бюджет молодой семьи).</li>
+            <li><strong>Дети</strong> Наш формат не предполагает детской площадки. По возможности, проведите этот вечер без детей.</li>
+            <li><strong>Паркинг</strong> Рядом с локацией есть платные городские парковки.</li>
+        </ul>
+    </div>
+
+    <div class="two-columns">
+        <div class="column">
+            <h3>Программа</h3>
+            <h4 style="margin:20px 0 10px; color:#b59d7b;">Екатерининский зал</h4>
+            <div class="program-item"><div class="program-time">10:00-10:30</div><div class="program-desc">Сбор гостей</div></div>
+            <div class="program-item"><div class="program-time">10:30-11:30</div><div class="program-desc">Церемония</div></div>
+            <div class="program-item"><div class="program-time">11:30-12:00</div><div class="program-desc">Поздравления</div></div>
+            <h4 style="margin:30px 0 10px; color:#b59d7b;">Moments Hall</h4>
+            <div class="program-item"><div class="program-time">12:00-14:00</div><div class="program-desc">Фотосессия</div></div>
+            <div class="program-item"><div class="program-time">16:00-16:30</div><div class="program-desc">Сбор гостей</div></div>
+            <div class="program-item"><div class="program-time">16:30-20:00</div><div class="program-desc">Банкет</div></div>
+        </div>
+        <div class="column">
+            <h3>Место</h3>
+            <div class="address"><strong>Церемония:</strong><p>Екатерининский зал</p><p>улица Красных Партизан, 319</p></div>
+            <div class="address" style="margin-top:30px;"><strong>Банкет:</strong><p>Moments Hall</p><p>улица Красных Партизан, 319</p><p><a href="https://yandex.ru/maps/-/CPqBVJYu" target="_blank">Открыть карту</a></p></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="deadline">Просим вас подтвердить свое желание до 1 августа 2026 включительно.</div>
+        <div class="signature">с любовью,<br>Дмитрий & Александра</div>
+    </div>
+
+    <footer>
+        <p>По вопросам: <a href="tel:+79991234567" style="color:#b59d7b;">+7 (999) 123-45-67</a> | <a href="mailto:wedding@example.com" style="color:#b59d7b;">wedding@example.com</a></p>
+        <p style="margin-top:20px;">#ДмитрийИАлександра</p>
+    </footer>
+</div>
+
+<script>
+    const weddingDate = new Date(2026, 7, 22, 10, 0, 0);
+    function updateTimer() {
+        const now = new Date().getTime();
+        const distance = weddingDate - now;
+        if (distance < 0) {
+            document.getElementById('days').innerText = '00'; document.getElementById('hours').innerText = '00';
+            document.getElementById('minutes').innerText = '00'; document.getElementById('seconds').innerText = '00';
+            return;
+        }
+        document.getElementById('days').innerText = Math.floor(distance / (1000*60*60*24)).toString().padStart(2,'0');
+        document.getElementById('hours').innerText = Math.floor((distance % (1000*60*60*24)) / (1000*60*60)).toString().padStart(2,'0');
+        document.getElementById('minutes').innerText = Math.floor((distance % (1000*60*60)) / (1000*60)).toString().padStart(2,'0');
+        document.getElementById('seconds').innerText = Math.floor((distance % (1000*60)) / 1000).toString().padStart(2,'0');
+    }
+    updateTimer(); setInterval(updateTimer, 1000);
+</script>
+</body>
+</html>
