@@ -129,47 +129,38 @@
             text-align: center;
             padding: 0 10px;
         }
-        .child-gallery {
+        .gallery-row {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            align-items: center;
+            gap: 40px;
             margin: 40px 0;
             flex-wrap: wrap;
         }
-        .child-photo {
-            flex: 1 1 250px;
-            max-width: 300px;
+        .circle-photo {
+            flex: 0 0 auto;
+            width: 250px;
             text-align: center;
         }
-        .child-photo img {
+        .circle-photo.large {
+            width: 300px;
+        }
+        .circle-photo img {
             width: 100%;
-            height: 300px;
+            height: 250px;
             object-fit: cover;
             border-radius: 50%;
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
             border: 4px solid #b59d7b;
         }
-        .child-photo p {
+        .circle-photo.large img {
+            height: 300px;
+        }
+        .circle-photo p {
             margin-top: 15px;
             font-size: 22px;
             color: #b59d7b;
             font-style: italic;
-        }
-        /* Стиль для взрослого фото */
-        .couple-photo {
-            margin: 40px 0;
-            text-align: center;
-        }
-        .couple-photo img {
-            max-width: 100%;
-            max-height: 500px;
-            border-radius: 25px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-            border: 3px solid rgba(181,157,123,0.3);
-            transition: transform 0.3s;
-        }
-        .couple-photo img:hover {
-            transform: scale(1.01);
         }
         .two-columns {
             display: grid;
@@ -331,24 +322,28 @@
                 </div>
             </div>
 
-            <!-- Мы в детстве -->
+            <!-- Фотографии в кружках -->
             <div class="card">
-                <h2 class="section-title">Мы в детстве</h2>
-                <div class="child-gallery">
-                    <div class="child-photo">
+                <h2 class="section-title">Мы в детстве и сейчас</h2>
+                <div class="gallery-row">
+                    <!-- Дима в детстве -->
+                    <div class="circle-photo">
                         <img src="https://raw.githubusercontent.com/DmitryAlexandra/wedding/main/images/1.jpg" alt="Дима в детстве">
                         <p>Дима</p>
                     </div>
-                    <div class="child-photo">
+                    
+                    <!-- Саша в детстве -->
+                    <div class="circle-photo">
                         <img src="https://raw.githubusercontent.com/DmitryAlexandra/wedding/main/images/2.jpg" alt="Саша в детстве">
                         <p>Саша</p>
                     </div>
+                    
+                    <!-- Взрослое фото (крупнее) -->
+                    <div class="circle-photo large">
+                        <img src="https://raw.githubusercontent.com/DmitryAlexandra/wedding/main/images/sochi.jpg" alt="Дмитрий и Александра">
+                        <!-- Без подписи -->
+                    </div>
                 </div>
-            </div>
-
-            <!-- Наше фото (без подписи) -->
-            <div class="card couple-photo" style="padding: 30px;">
-                <img src="https://raw.githubusercontent.com/DmitryAlexandra/wedding/main/images/sochi.jpg" alt="Дмитрий и Александра">
             </div>
 
             <!-- Telegram с QR-кодом -->
